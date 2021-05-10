@@ -38,7 +38,7 @@ function displayWeatherConditions(response) {
 
 function searchCity(city) {
     let apiKey = "edb378f0be539a4b2c5c96da53e9f0c1";
-    let apiUrl = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeatherConditions);
 }
 
@@ -48,7 +48,13 @@ function handleSubmit(event) {
     searchCity(city);
 }
 
+function searchPosition(position) {
+    let apiKey = "edb378f0be539a4b2c5c96da53e9f0c1";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 
+    axios.get(apiUrl).then(displayWeatherConditions);
+
+}
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();

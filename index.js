@@ -22,7 +22,7 @@ function formatDate(date) {
     ];
     let day = days[perDiem];
 
-    return `${day} ${hours} ${minutes}`;
+    return `${day} ${hours}:${minutes}`;
 }
 
 

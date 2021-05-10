@@ -42,6 +42,13 @@ function searchCity(city) {
     axios.get(apiUrl).then(displayWeatherConditions);
 }
 
+function handleSubmit(event) {
+    event.preventDefault();
+    let city = document.querySelector("#city-input").value;
+    searchCity(city);
+}
+
+
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
